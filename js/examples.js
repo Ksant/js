@@ -11,7 +11,8 @@ if (num < 49) {
 
 // Тернарный оператор
 const ntm = 50;
-(ntm === 50) ? console.log('ок!') : console.log('Error');
+let result = (ntm === 50) ? 'ок!' : "Error!";
+console.log(result);
 
 //switch
 const wnm = 50;

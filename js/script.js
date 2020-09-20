@@ -50,7 +50,8 @@ if (personalMovieDB.count < 10 ){
     console.log("Вы киноман");
 } else {
     console.log("Произошлка ошибка");
-};
+}
+
 console.log(personalMovieDB);
 
 
