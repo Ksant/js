@@ -52,3 +52,14 @@ let fnum = 50;
 for (let i = 1; i < fnum; i++) {
     console.log(i);
 }
+
+//  Методы строк и чисел.
+const strVar = "Hello world!";
+console.log(strVar[6]);
+console.log(strVar.substr(6,5));
+
+const strNum = "12.2px";
+console.log(parseInt(strNum));
+console.log(parseFloat(strNum));
+
+console.log(Math.round(parseFloat(strNum)));
