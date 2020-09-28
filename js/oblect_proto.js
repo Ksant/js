@@ -8,7 +8,7 @@ const john = {
 };
 
 //// Устаревший формат наследования. 
-john.__proto__=solder;
+// john.__proto__=solder;
 console.log(john.armour);
 // 10
 
