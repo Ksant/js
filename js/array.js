@@ -67,7 +67,7 @@ console.log(products.join(";"));
 products.sort();
 console.log(products.join(";"));
 // Но мы можем настроить сортировку (в SORT используется алгоритм быстрой сортировки)
-const arrSortNum = [12,4,21,4,64,7]
+const arrSortNum = [12,4,21,4,64,7];
 function compareNum(a,b) {
     return a - b;
 }
