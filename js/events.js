@@ -37,3 +37,7 @@ link.addEventListener('click', (e)=>{
 });
 
 
+//// Ждем загрузку всего дом дерева.
+document.addEventListener('DOMContentLoaded', () => {
+    //Весь код, который нужно выполнить.
+});
