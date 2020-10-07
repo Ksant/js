@@ -37,3 +37,25 @@ div3.insertAdjacentHTML('beforebegin','<h5>beforebegin</h5>');
 div3.insertAdjacentHTML('afterbegin',' <h5>afterbegin</h5>');
 div3.insertAdjacentHTML('beforeend','<h5>beforeend</h5>');
 div3.insertAdjacentHTML('afterend','<h5>afterend</h5>');
+
+
+//// Перемещение по дом дереву
+//console.log(document.body.childNodes);
+//console.log(document.body.firstChild);
+//console.log(document.body.firstElementChild);
+//console.log(document.body.lastChild);
+//console.log(document.body.lastElementChild);
+
+// Получаем конкретный элемент и родитель его родителя.
+// console.log(document.querySelector('#current').parentNode.parentNode);
+
+// Получаем дата атрибут и следующий за ним элемент
+// console.log(document.querySelector('[data-current="3"]').nextElementSibling);
+
+// Выводим только подчиненные элементы, пропуская узлы
+for (let node of document.body.childNodes) {
+    if (node.nodeName == "#text") {
+        continue;
+    }
+    console.log(node);
+}
