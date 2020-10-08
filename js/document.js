@@ -53,9 +53,9 @@ div3.insertAdjacentHTML('afterend','<h5>afterend</h5>');
 // console.log(document.querySelector('[data-current="3"]').nextElementSibling);
 
 // Выводим только подчиненные элементы, пропуская узлы
-for (let node of document.body.childNodes) {
-    if (node.nodeName == "#text") {
-        continue;
-    }
-    console.log(node);
-}
+// for (let node of document.body.childNodes) {
+//     if (node.nodeName == "#text") {
+//         continue;
+//     }
+//     console.log(node);
+// }
