@@ -5,6 +5,21 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<title>JavaScript</title>
 		<link rel="stylesheet" href="css/style.css">
+		<!-- defer - скрипты с таким тегом всегда будут:
+		1. Дает бразуеру команду загржать скрипт в фоновом режиме и продолжать загржать верстку. 
+		Скрпиты с defer никогда не блокируют страницу.
+		2. Скрипт начнет исполнстся только после загрузки всей дом стурктуры.
+		Выполняются только тогда, когда наше дом дерево уже готово.
+		3. Скрпиты с defer всегда загружаются последовательно. 
+		Т.е. следующий будет ждать предыдущего. -->
+		<script defer src="js/document.js"></script>
+		<script defer src="js/events_mobile.js"></script>
+
+		<!-- async Никто никого не ждет.
+		Хорошо для метрик и счетчиков. -->
+		<!-- <script async src="js/document.js"></script>
+		<script async src="js/events_mobile.js"></script> -->
+
 	</head>
 	<body>
 		<div class="box" id="box"></div>
@@ -51,8 +66,5 @@
 			</div>
 			<div class="third"></div>
 		</div>
-
-		<script src="js/document.js"></script>
-		<script src="js/events_mobile.js"></script>
 	</body>
 </html>

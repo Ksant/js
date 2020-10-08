@@ -1,5 +1,12 @@
 "use strict";
 
+// Можно добавлять скрипты отсюда.
+// Такие скрипты загружаются как sync
+// const script = document.createElement('script');
+// script.src = "js/test.js";
+// script.async = "false";
+// document.body.append();
+
 const personalMovieDB = {
     count: 0,
     movies: {},
