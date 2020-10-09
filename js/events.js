@@ -15,29 +15,44 @@ const overlay = document.querySelector('.overlay');
 // 3. addEventListener. Лучший вариант с несколькими плюсами.
 // Можем назначать несколько действий на 1 событие.
 // Можем удалять события.
-let i = 0;
-const f1 = (e) => {
-    i++;
-    console.log(e.currentTarget);
-    e.target.innerHTML = i;
-    if (i > 3) {
-        btn.removeEventListener('click', f1);
-    } 
-};
+// let i = 0;
+// const f1 = (e) => {
+//     i++;
+//     console.log(e.currentTarget);
+//     e.target.innerHTML = i;
+//     if (i > 3) {
+//         btn.removeEventListener('click', f1);
+//     } 
+// };
 
-btn.addEventListener('click', f1);
-overlay.addEventListener('click', f1, {once: true});
+// btn.addEventListener('click', f1);
+// overlay.addEventListener('click', f1, {once: true});
 
 
 //// Отмена стандартного поведения элемента
-const link = document.querySelector('a');
-link.addEventListener('click', (e)=>{
-    e.preventDefault();
-    console.log(e.target);
-});
+// const link = document.querySelector('a');
+// link.addEventListener('click', (e)=>{
+//     e.preventDefault();
+//     console.log(e.target);
+// });
 
 
 //// Ждем загрузку всего дом дерева.
 document.addEventListener('DOMContentLoaded', () => {
     //Весь код, который нужно выполнить.
 });
+
+//// ------- Делегирование событий.
+const over = document.querySelector('div.overlay');
+// Делегируем события кнопке внутри. Причем только кнопке с классом "blue"
+over.addEventListener('click', (e) => {
+    //if(e.target && e.target.classList.contains('blue')) {
+    if(e.target && e.target.matches('button.blue')) {
+        console.log('hello');
+    }
+});
+// Создадим еще одну кнопку с классом blue и к ней будет подключен обработчик события.
+const btn6 = document.createElement('button');
+btn6.classList.add('blue');
+btn6.innerText=6;
+over.append(btn6);

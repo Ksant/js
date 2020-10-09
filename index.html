@@ -13,6 +13,7 @@
 		3. Скрпиты с defer всегда загружаются последовательно. 
 		Т.е. следующий будет ждать предыдущего. -->
 		<script defer src="js/document.js"></script>
+		<script defer src="js/events.js"></script>
 		<script defer src="js/events_mobile.js"></script>
 
 		<!-- async Никто никого не ждет.
@@ -24,14 +25,12 @@
 	<body>
 		<div class="box" id="box"></div>
 		<div class="overlay">
-			<button id="btn">
-
-			</button>
+			<button id="btn">1</button>
+			<button class="blue">2</button>
+			<button>3</button>
+			<button>4</button>
+			<button>5</button>
 		</div>
-		<button>2</>
-		<button>3</button>
-		<button>4</button>
-		<button>5</button>
 
 		<div class="circle"></div>
 		<div class="circle"></div>
