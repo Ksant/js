@@ -140,3 +140,21 @@ const obj2 = {
 
 const obj2Clone = {...obj2};
 
+
+// --- Глубокое клонирование объектов.
+// Делается при помощи JSON
+
+const person = {
+    name:'Alex',
+    tel:'+744444444444',
+    parents: {
+        mom: 'Olga',
+        dad: 'Mike'
+    }
+};
+
+const deepClone = JSON.parse(JSON.stringify(person));
+deepClone.parents.mom = 'Toma';
+
+console.log(person);
+console.log(deepClone);
