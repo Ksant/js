@@ -73,3 +73,89 @@ function compareNum(a,b) {
 }
 arrSortNum.sort(compareNum);
 console.log(arrSortNum.join(";"));
+
+
+
+function createUl(div, text) {
+    const newDiv = document.createElement('div');
+    div.before(newDiv);
+
+    newDiv.append(document.createElement('h3').innerText = text);
+    const arrUl = document.createElement('ul');
+    newDiv.append(arrUl);
+    return arrUl;
+} 
+
+function createLi(arr, ul){
+    arr.forEach((val) =>{
+        const newLi = document.createElement('li');
+        newLi.innerText = val;
+        ul.append(newLi); 
+    });
+}
+
+function arrToStr(arr, el, text){
+    const div = document.createElement('div');
+    el.before(div);
+    div.append(document.createElement('h3').innerText = text);
+    const str = arr.reduce((sum, current) => sum + ', ' +current);
+    const newDiv = document.createElement('div');
+    newDiv.innerText = str;
+    el.before(newDiv);
+}
+
+function AddElem(el, text, elem){
+    const newEl = document.createElement(elem);
+    newEl.innerText = text;
+    el.before(newEl);
+}
+
+// --- Создаем список при помощи массива и foreach
+const names = ['Ivan','Ann','KsEnia','VoldemarT', 'bag'];
+const arrDiv = document.querySelector('.array');
+
+arrToStr(names, arrDiv, "Простой массив");
+
+// ---- filters
+const shortName = names.filter((name) => {
+    return name.length<5;
+});
+AddElem(arrDiv, "filters", 'H2');
+arrToStr(shortName, arrDiv,  "Массив с фильтацией (длина имени меньше 5ти)");
+
+// ---- map
+const normalNames = names.map(item => item.toLocaleLowerCase());
+AddElem(arrDiv, "map", 'H2');
+arrToStr(normalNames, arrDiv,  "Преобразование к нижнему регистру");
+
+// ---- some Если хотя бы 1 элемент массива удовлетворяет условию - true
+let text = `Если хотя бы 1 элемент массива удовлетворяет условию - true.
+    Проверяем есть ли в массиве хоть 1 число.`;
+AddElem(arrDiv, "Some", 'H2');
+AddElem(arrDiv, text, 'H4');
+names.push(4);
+arrToStr(names, arrDiv,  "");
+const resSome = names.some(item => typeof(item) === 'number');
+AddElem(arrDiv, resSome, 'p');
+
+
+// ---- Every Если все элементы массива удовлетворяет условию - true
+text = `Если все элементы массива удовлетворяет условию - true.
+    Проверяем все ли элементы массива числа?.`;
+AddElem(arrDiv, "Every", 'H2');
+AddElem(arrDiv, text, 'H4');
+arrToStr(names, arrDiv,  "");
+const resEvery = names.every(item => typeof(item) === 'number');
+AddElem(arrDiv, resEvery, 'p');
+
+// ---- Reduce
+text = 'Reduce';
+AddElem(arrDiv, text, 'H2');
+text = 'Собираем вcе числа массива';
+AddElem(arrDiv, text, 'H4');
+const arrReduce = [7,5,13];
+arrToStr(arrReduce, arrDiv,  "");
+const arrReduceRes = arrReduce.reduce((sum, current) =>  sum + current);
+AddElem(arrDiv, arrReduceRes, 'p');
+
+
